@@ -1,8 +1,6 @@
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Utilisateur {
     private String id;
@@ -43,18 +41,13 @@ public class Utilisateur {
         return dateCreation;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Utilisateur)) return false;
-        Utilisateur that = (Utilisateur) o;
-        return id.equals(that.id) &&
-               nomUtilisateur.equals(that.nomUtilisateur) &&
-               email.equals(that.email);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Utilisateur autre = (Utilisateur) obj;
+        return id.equals(autre.id) &&
+                nomUtilisateur.equals(autre.nomUtilisateur) &&
+                email.equals(autre.email);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nomUtilisateur, email);
-    }
 }
