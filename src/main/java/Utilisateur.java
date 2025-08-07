@@ -40,14 +40,4 @@ public class Utilisateur {
     public LocalDateTime getDateCreation() {
         return dateCreation;
     }
-
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Utilisateur autre = (Utilisateur) obj;
-        return id.equals(autre.id) &&
-                nomUtilisateur.equals(autre.nomUtilisateur) &&
-                email.equals(autre.email);
-    }
-
 }
